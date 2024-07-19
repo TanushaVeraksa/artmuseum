@@ -1,15 +1,40 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import { IArt } from '../models/IArt'
 import { Link } from 'react-router-dom';
 import CardText from '../styles/CardText';
 import Flex from '../styles/Flex';
 import { ReactComponent as Museum } from '../assets/museum.svg';
+import { ReactComponent as VectorUnactive } from '../assets/vectorUnactive.svg';
+import { ReactComponent as VectorActive } from '../assets/VectorActive.svg';
+import { useAppDispatch, useAppSelector } from '../hooks/redux';
+import { favoriteSlice } from '../store/reducers/FavoriteSlice';
+import Button from '../styles/Button';
 
 interface ArtItemProps {
   art: IArt;
+  isFavoritePage?: boolean;
 }
 
-const ArtItem: FC<ArtItemProps> = ({art}: ArtItemProps) => {
+const ArtItem: FC<ArtItemProps> = ({art, isFavoritePage: isNotFavoritePage = false}: ArtItemProps) => {
+
+  const dispatch = useAppDispatch();
+  const {favorites} = useAppSelector(state => state.favoritesReducer);
+  const existing = () => {
+    const existFavorite = favorites.findIndex(f => f.id === art.id);
+    return existFavorite < 0 ? false : true;
+  }
+
+  const [isClick, setIsClick] = useState(existing());
+
+  const handleAdd = (favor: IArt) => { 
+    dispatch(favoriteSlice.actions.addFavorite(favor));
+    setIsClick(s => !s)   
+  }
+
+  const handleDelete = (favor: IArt) => {
+    dispatch(favoriteSlice.actions.removeFavorite(favor));
+    setIsClick(s => !s)   
+  }
 
   return (
     <div style={{position: 'relative'}}> 
@@ -30,6 +55,19 @@ const ArtItem: FC<ArtItemProps> = ({art}: ArtItemProps) => {
           <CardText size='1em' bold='bold' margin='10px 0' padding='0 10px 0 0'>{art.title}</CardText>
           <CardText color='#E0A449'>{art.artist_title}</CardText>
         </Flex>
+
+        {isNotFavoritePage ? 
+          <Button color="#FBD7B24D" onClick={() => handleDelete(art)}><VectorActive/></Button> 
+          :
+        <>
+          {isClick ? 
+            <Button color="#FBD7B24D" onClick={() => handleDelete(art)}><VectorActive/></Button> 
+          : 
+            <Button onClick={() => handleAdd(art)}><VectorUnactive/></Button>
+          } 
+        </> 
+      }
+
       </Flex>
     </div>
   )
