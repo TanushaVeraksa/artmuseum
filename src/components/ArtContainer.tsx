@@ -9,7 +9,6 @@ const {arts, isLoading, error} = useAppSelector(state => state.artsReducer);
 
   return (
     <div>
-        <p>let's find some art here!</p>
         {isLoading && <h1>Loading...</h1>}
         {error && <h1>{error}</h1>}
         <Grid>

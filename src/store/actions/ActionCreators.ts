@@ -6,14 +6,21 @@ import { artSlice } from "../reducers/ArtSlice";
 export const fetchArts =
   (page: number = 1, limit: number = 3) =>
   async (dispatch: AppDispatch) => {
+    const params = page === 1 && limit === 9;
     try {
-      dispatch(artSlice.actions.artsFetching());
+      params
+        ? dispatch(artSlice.actions.artsHomeFetching())
+        : dispatch(artSlice.actions.artsFetching());
       const response = await axios.get<{
         data: IArt[];
       }>(`https://api.artic.edu/api/v1/artworks?page=${page}&limit=${limit}`);
-      dispatch(artSlice.actions.artsFetchingSuccess(response.data.data));
+      params
+        ? dispatch(artSlice.actions.artsHomeFetchingSuccess(response.data.data))
+        : dispatch(artSlice.actions.artsFetchingSuccess(response.data.data));
     } catch (e) {
       if (axios.isAxiosError(e))
-        dispatch(artSlice.actions.artsFetchingError(e.message));
+        params
+          ? dispatch(artSlice.actions.artsHomeFetchingError(e.message))
+          : dispatch(artSlice.actions.artsFetchingError(e.message));
     }
   };
