@@ -67,7 +67,6 @@ const ArtItem: FC<ArtItemProps> = ({art, isFavoritePage: isNotFavoritePage = fal
           } 
         </> 
       }
-
       </Flex>
     </div>
   )
