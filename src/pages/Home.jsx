@@ -1,9 +1,11 @@
+import ArtContainer from "../components/ArtContainer";
+
 const Home = () => {
     
     return (
-      <div>
-      Home
-    </div>
+    <>
+      <ArtContainer/>
+    </>
     );
   }
   
