@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { useAppDispatch } from './hooks/redux';
 import { fetchArts } from './store/actions/ActionCreators';
 import { favoriteSlice } from "./store/reducers/FavoriteSlice";
+import Footer from "./components/Footer";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
   return <>
   <NavBar/>
   <Outlet/>
+  <Footer />
   </>;
 }
 

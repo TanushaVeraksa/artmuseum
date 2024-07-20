@@ -11,10 +11,10 @@ const Home = () => {
         <Title margin="120px 0 0 0" transform="capitalize" weight="700" size="2.5em" width="25%">let's find some <Span color="#F17900">art</Span> here!</Title>
         <Title color="#E0A449" margin="120px 0 0 0">Topics for you</Title>
         <Title size="2em" margin="0 0 40px 0">Our special gallery</Title>
-      <ArtContainer/>
-      <Title color="#E0A449" margin="120px 0 0 0">Here some more</Title>
-      <Title size="2em" margin="0 0 40px 0">Other works for you</Title>
-      <CardContainer />
+        <ArtContainer/>
+        <Title color="#E0A449" margin="120px 0 0 0">Here some more</Title>
+        <Title size="2em" margin="0 0 40px 0">Other works for you</Title>
+        <CardContainer />
     </Flex>
     );
   }

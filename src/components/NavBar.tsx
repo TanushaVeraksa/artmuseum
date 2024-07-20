@@ -14,7 +14,7 @@ const Navbar = () => {
             <Link to="/">
             <Museum />
             </Link>
-            <NavSpan align='flex-end'>Museum of <NavSpan color='#E0A449'>Art</NavSpan></NavSpan>
+            <NavSpan padding='0 0 0 10px' align='flex-end'>Museum of <NavSpan weight='700' color='#E0A449'>Art</NavSpan></NavSpan>
         </Nav>
         <Nav>
             <Link to="/favorite">
