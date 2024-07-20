@@ -11,7 +11,7 @@ const {arts, isLoading, error} = useAppSelector(state => state.artsReducer);
     <div>
         {isLoading && <h1>Loading...</h1>}
         {error && <h1>{error}</h1>}
-        <Grid gap='30px'>
+        <Grid gap='15px'>
         {arts && arts.map(art => 
             <ArtItem key={art.id} art={art} />
         )}

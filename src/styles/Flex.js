@@ -11,7 +11,8 @@ padding: ${({padding}) => padding || 0};
 width: ${({width}) => width || 'auto'};
 height: ${({height}) => height || 'auto'};
 background-color: ${({background}) => background || '#FAFAFA'};
-border: ${({border}) => border || 'none'}
+border: ${({border}) => border || 'none'};
+max-width: ${({max}) => max || 'auto'};
 }
 `
 

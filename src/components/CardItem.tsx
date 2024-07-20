@@ -48,7 +48,7 @@ const CardItem: FC<CardItemsProps> = ({art, isFavoritePage = false}: CardItemsPr
         }
         </Link>
       </ImageContainer>
-        <div>
+        <div style={{maxWidth: 150}}>
           <CardText size='1em' bold='bold' margin='10px 0' padding='0 10px 0 0'>{art.title}</CardText>
           <CardText color='#E0A449'>{art.artist_title}</CardText>
         </div>

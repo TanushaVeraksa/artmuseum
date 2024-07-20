@@ -4,4 +4,8 @@ export interface IArt {
   artist_title: string;
   image_id: string;
   department_title: string;
+  dimensions: string;
+  place_of_origin: string;
+  credit_line: string;
+  date_display: string;
 }

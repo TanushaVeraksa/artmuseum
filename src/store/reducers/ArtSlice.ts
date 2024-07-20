@@ -16,7 +16,11 @@ const initialState: ArtState = {
     artist_title: "",
     image_id: "",
     department_title: "",
-  }
+    dimensions: "",
+    place_of_origin: "",
+    credit_line: "",
+    date_display: "",
+  },
 };
 
 export const artSlice = createSlice({
@@ -34,7 +38,7 @@ export const artSlice = createSlice({
     artFetchingError(state, action: PayloadAction<string>) {
       state.isLoading = false;
       state.error = action.payload;
-    }
+    },
   },
 });
 
