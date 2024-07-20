@@ -6,8 +6,8 @@ color: ${({color}) => color || '#FFFFFF'};
 }
 `
 
-const NavSpan = (props) => {
+const Span = (props) => {
   return <StyledNavSpan {...props}/>
 }
 
-export default NavSpan
+export default Span

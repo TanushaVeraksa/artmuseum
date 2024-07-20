@@ -3,7 +3,7 @@ import Nav from '../styles/Nav';
 import NavContainer from '../styles/NavContainer';
 import { ReactComponent as Museum } from '../assets/museum.svg';
 import { ReactComponent as Vector } from '../assets/vector.svg'; 
-import NavSpan from '../styles/NavSpan';
+import NavSpan from '../styles/Span';
 
 
 const Navbar = () => {
