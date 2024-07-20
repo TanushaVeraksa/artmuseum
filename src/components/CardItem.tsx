@@ -1,21 +1,22 @@
-import { FC, useState } from 'react'
-import { IArt } from '../models/IArt'
+import React, { FC, useState } from 'react'
+import { IArt } from '../models/IArt';
 import { Link } from 'react-router-dom';
-import CardText from '../styles/CardText';
-import Flex from '../styles/Flex';
 import { ReactComponent as Museum } from '../assets/museum.svg';
+import CardText from '../styles/CardText';
+import Button from '../styles/Button';
+import { favoriteSlice } from '../store/reducers/FavoriteSlice';
+import { useAppDispatch, useAppSelector } from '../hooks/redux';
 import { ReactComponent as VectorUnactive } from '../assets/vectorUnactive.svg';
 import { ReactComponent as VectorActive } from '../assets/VectorActive.svg';
-import { useAppDispatch, useAppSelector } from '../hooks/redux';
-import { favoriteSlice } from '../store/reducers/FavoriteSlice';
-import Button from '../styles/Button';
+import Flex from '../styles/Flex';
 import ImageContainer from '../styles/ImageContainer';
 
-interface ArtItemProps {
-  art: IArt;
-}
+interface CardItemsProps {
+    art: IArt;
+    isFavoritePage?: boolean;
+  }
 
-const ArtItem: FC<ArtItemProps> = ({art}: ArtItemProps) => {
+const CardItem: FC<CardItemsProps> = ({art, isFavoritePage = false}: CardItemsProps) => {
 
   const dispatch = useAppDispatch();
   const {favorites} = useAppSelector(state => state.favoritesReducer);
@@ -37,32 +38,33 @@ const ArtItem: FC<ArtItemProps> = ({art}: ArtItemProps) => {
   }
 
   return (
-    <div style={{position: 'relative'}}> 
-      <ImageContainer>
+      <Flex width="100%" background="#FFFFFF" border="1px solid #F0F1F1" justify="space-between" align="center" padding="0.8em">
+      <ImageContainer width='80px' height='80px'>
         <Link to={`/detail/${art.id}`}>
-        <div style={{overflow: 'hidden', height:250, position: 'relative'}}>
-        {art.image_id ? 
+        { art.image_id ? 
           <img style={{objectFit:'cover', width:'100%', height:'100%'}} src={`https://www.artic.edu/iiif/2/${art.image_id}/full/200,/0/default.jpg`} alt={art.title}/>
           :
-          <Museum style={{objectFit:'cover', width:'100%', height:'100%', position:'absolute', top:0, left:0}}/>
+          <Museum style={{objectFit:'cover', width:'100%', height:'100%'}} />
         }
-        </div>
         </Link>
       </ImageContainer>
-
-       <Flex style={{position: 'relative', zIndex: 2, top:-30}} align="center" justify="space-between" padding="17px 24px" border="1px solid #F0F1F1" width="280px" background='#FFFFFF'> 
-        <Flex direction="column" align="flex-start" background='#FFFFFF'>
+        <div>
           <CardText size='1em' bold='bold' margin='10px 0' padding='0 10px 0 0'>{art.title}</CardText>
           <CardText color='#E0A449'>{art.artist_title}</CardText>
-        </Flex>
-          {isClick ? 
-            <Button color="#FBD7B24D" onClick={() => handleDelete(art)}><VectorActive/></Button> 
-          : 
-            <Button onClick={() => handleAdd(art)}><VectorUnactive/></Button>
-          } 
+        </div>
+      {isFavoritePage ? 
+        <Button color="#FBD7B24D" onClick={() => handleDelete(art)}><VectorActive/></Button> 
+        :
+      <>
+        {isClick ? 
+          <Button color="#FBD7B24D" onClick={() => handleDelete(art)}><VectorActive/></Button> 
+        : 
+          <Button onClick={() => handleAdd(art)}><VectorUnactive/></Button>
+        } 
+      </> 
+      }
       </Flex>
-    </div>
   )
 }
 
-export default ArtItem
+export default CardItem;

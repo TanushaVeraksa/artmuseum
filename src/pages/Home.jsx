@@ -1,4 +1,5 @@
 import ArtContainer from "../components/ArtContainer";
+import CardContainer from "../components/CardContainer";
 import Flex from '../styles/Flex';
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
       <ArtContainer/>
       <p>Here some more</p>
       <p>Other works for you</p>
+      <CardContainer />
     </Flex>
     );
   }
