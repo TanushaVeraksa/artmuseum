@@ -44,7 +44,7 @@ const CardItem: FC<CardItemsProps> = ({art, isFavoritePage = false}: CardItemsPr
         { art.image_id ? 
           <img style={{objectFit:'cover', width:'100%', height:'100%'}} src={`https://www.artic.edu/iiif/2/${art.image_id}/full/200,/0/default.jpg`} alt={art.title}/>
           :
-          <Museum style={{objectFit:'cover', width:'100%', height:'100%'}} />
+          <Museum style={{objectFit:'cover', width:'100%', height:'100%', border: '1px solid #E0A449', padding: '16px 18px'}} />
         }
         </Link>
       </ImageContainer>

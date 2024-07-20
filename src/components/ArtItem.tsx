@@ -40,11 +40,11 @@ const ArtItem: FC<ArtItemProps> = ({art}: ArtItemProps) => {
     <div style={{position: 'relative'}}> 
       <ImageContainer>
         <Link to={`/detail/${art.id}`}>
-        <div style={{overflow: 'hidden', height:250, position: 'relative'}}>
+        <div style={{overflow: 'hidden', height:250, width:300, position: 'relative'}}>
         {art.image_id ? 
           <img style={{objectFit:'cover', width:'100%', height:'100%'}} src={`https://www.artic.edu/iiif/2/${art.image_id}/full/200,/0/default.jpg`} alt={art.title}/>
           :
-          <Museum style={{objectFit:'cover', width:'100%', height:'100%', position:'absolute', top:0, left:0}}/>
+          <Museum style={{objectFit:'cover', width:'100%', height:'100%'}}/>
         }
         </div>
         </Link>
