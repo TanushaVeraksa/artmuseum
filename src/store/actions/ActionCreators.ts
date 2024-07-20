@@ -6,7 +6,7 @@ import { artSlice } from "../reducers/ArtsSlice";
 export const fetchArts =
   (page: number = 1, limit: number = 3) =>
   async (dispatch: AppDispatch) => {
-    const params = page === 1 && limit === 9;
+    const params = page === 9 && limit === 9;
     try {
       params
         ? dispatch(artSlice.actions.artsHomeFetching())

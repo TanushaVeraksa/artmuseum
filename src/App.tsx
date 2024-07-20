@@ -11,7 +11,7 @@ function App() {
   const dispatch = useAppDispatch();
   useEffect(()=> {
     dispatch(fetchArts());
-    dispatch(fetchArts(1, 9))
+    dispatch(fetchArts(9, 9))
     const favorite = localStorage.getItem('favoriteItems');
     const existingFavorites = favorite !== null ? JSON.parse(favorite) : [];
     dispatch(favoriteSlice.actions.getFavorite(existingFavorites));
