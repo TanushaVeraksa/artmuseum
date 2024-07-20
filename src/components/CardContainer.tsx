@@ -11,7 +11,7 @@ const {artsHome, isLoadingHome, errorHome} = useAppSelector(state => state.artsR
     <div>
         {isLoadingHome && <h1>Loading...</h1>}
         {errorHome && <h1>{errorHome}</h1>}
-        <Grid gap='16px'>
+        <Grid gap='16px' margin="0 0 120px 0">
         {artsHome && artsHome.map(art => 
             <CardItem key={art.id} art={art} />
         )}

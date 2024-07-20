@@ -6,6 +6,7 @@ const StyledGrid = styled.div`
   gap: ${({gap}) => gap || 0};
   justify-content: center;
   justify-items: center;
+  margin: ${({margin}) => margin || 0};
 `
 
 
