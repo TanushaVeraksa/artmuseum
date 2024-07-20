@@ -1,5 +1,5 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import artsReducer from "./reducers/ArtSlice";
+import artsReducer from "./reducers/ArtsSlice";
 import favoritesReducer from "./reducers/FavoriteSlice";
 
 const rootReducer = combineReducers({

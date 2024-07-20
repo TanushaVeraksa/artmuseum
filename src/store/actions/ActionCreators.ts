@@ -1,7 +1,7 @@
 import axios from "axios";
 import { AppDispatch } from "../store";
 import { IArt } from "../../models/IArt";
-import { artSlice } from "../reducers/ArtSlice";
+import { artSlice } from "../reducers/ArtsSlice";
 
 export const fetchArts =
   (page: number = 1, limit: number = 3) =>
