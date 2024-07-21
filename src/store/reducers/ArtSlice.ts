@@ -20,6 +20,7 @@ const initialState: ArtState = {
     place_of_origin: "",
     credit_line: "",
     date_display: "",
+    is_public_domain: false,
   },
 };
 

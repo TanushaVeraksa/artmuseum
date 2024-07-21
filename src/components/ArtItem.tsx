@@ -52,8 +52,9 @@ const ArtItem: FC<ArtItemProps> = ({art}: ArtItemProps) => {
 
        <Flex style={{position: 'relative', zIndex: 2, top:-30}} align="center" justify="space-between" padding="17px 24px" border="1px solid #F0F1F1" width="280px" background='#FFFFFF'> 
         <Flex direction="column" align="flex-start" background='#FFFFFF'>
-          <CardText size='1em' bold='bold' margin='10px 0' padding='0 10px 0 0'>{art.title}</CardText>
+          <CardText size='1em' bold='bold' padding='0 10px 0 0'>{art.title}</CardText>
           <CardText color='#E0A449'>{art.artist_title}</CardText>
+          <CardText bold='bold' margin='10px 0'>{art.is_public_domain ? 'Public' : 'Not Public'}</CardText>
         </Flex>
           {isClick ? 
             <Button color="#FBD7B24D" onClick={() => handleDelete(art)}><VectorActive/></Button> 

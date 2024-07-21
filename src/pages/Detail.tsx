@@ -84,6 +84,7 @@ return (
             <Span color='#E0A449'>Repository: </Span>
             {department_title}
           </CardText>
+          <CardText bold='bold' margin='10px 0 0 '>{art.is_public_domain ? 'Public' : 'Not Public'}</CardText>
         </Flex>
       </Flex>
     </Flex>

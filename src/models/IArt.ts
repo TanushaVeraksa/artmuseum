@@ -8,4 +8,5 @@ export interface IArt {
   place_of_origin: string;
   credit_line: string;
   date_display: string;
+  is_public_domain: boolean;
 }
