@@ -1,4 +1,6 @@
 import { Dispatch, SetStateAction, FC} from "react";
+import Input from "../styles/Input";
+import search  from '../assets/search.svg';
 
 interface InputProps {
   searchValue: string;
@@ -7,12 +9,12 @@ interface InputProps {
 
 const SearchInput:  FC<InputProps> = ({ searchValue, setSearchValue }: InputProps) => {
   return (
-      <input
-          className="search-input"
+      <Input
           type="text"
+          image={search}
           value={searchValue}
-          onChange={(e) => setSearchValue(e.target.value)}
-          placeholder="Search"
+          onChange={(e: { target: { value: SetStateAction<string>; }; }) => setSearchValue(e.target.value)}
+          placeholder="Search Art, Artist, Work..."
           autoFocus
       />
   )

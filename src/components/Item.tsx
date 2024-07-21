@@ -10,7 +10,7 @@ const Item: FC<ArtItemProps> = ({ art }:ArtItemProps) => {
     return (
         <>
         <Link to={`/detail/${art.id}`}>
-        <p>{art.title}</p>
+        <p style={{margin: '10px 0'}}>{art.title}</p>
         </Link>
         </>
     )

@@ -13,7 +13,7 @@ const Home = () => {
   const debouncedSearchValue = useDebounce(searchValue, 1000)
     return (
       <Flex direction = 'column' justify="center" align="center">
-        <Title margin="120px 0 0 0" transform="capitalize" weight="700" size="2.5em" width="25%">let's find some <Span color="#F17900">art</Span> here!</Title>
+        <Title margin="120px 0 120px 0" transform="capitalize" weight="700" size="2.5em" width="25%">let's find some <Span color="#F17900">art</Span> here!</Title>
         <SearchInput
             searchValue={searchValue}
             setSearchValue={setSearchValue}
