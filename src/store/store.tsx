@@ -6,7 +6,7 @@ import artReducer from "./reducers/ArtSlice";
 const rootReducer = combineReducers({
     artsReducer: artsReducer,
     favoritesReducer: favoritesReducer,
-    artReducer: artReducer
+    artReducer: artReducer,
 })
 
 export const setupStore = () => {
