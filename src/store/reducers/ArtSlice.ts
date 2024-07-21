@@ -21,6 +21,7 @@ const initialState: ArtState = {
     credit_line: "",
     date_display: "",
     is_public_domain: false,
+    date_start: 0,
   },
 };
 

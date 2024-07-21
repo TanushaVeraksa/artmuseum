@@ -51,6 +51,9 @@ const CardItem: FC<CardItemsProps> = ({art, isFavoritePage = false}: CardItemsPr
         <div style={{maxWidth: 150}}>
           <CardText size='1em' bold='bold' padding='0 10px 0 0'>{art.title}</CardText>
           <CardText color='#E0A449'>{art.artist_title}</CardText>
+          {isFavoritePage && 
+          <CardText>{art.date_start}</CardText>
+          }
           <CardText bold='bold' margin='10px 0'>{art.is_public_domain ? 'Public' : 'Not Public'}</CardText>
         </div>
       {isFavoritePage ? 

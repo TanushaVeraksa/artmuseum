@@ -9,4 +9,5 @@ export interface IArt {
   credit_line: string;
   date_display: string;
   is_public_domain: boolean;
+  date_start: number;
 }
